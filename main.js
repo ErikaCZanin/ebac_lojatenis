@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $('.botao-menu button').click(function() {
         $('.menu').slideToggle();
@@ -21,7 +22,7 @@ $(document).ready(function() {
     
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            const sizesSelected = button.closest('.noticia').querySelectorAll('.size-circle.selected');
+            const sizesSelected = button.closest('.produto').querySelectorAll('.size-circle.selected');
             if (sizesSelected.length === 0) {
                 alert('Por favor, selecione um tamanho antes de adicionar ao carrinho.');
                 return;

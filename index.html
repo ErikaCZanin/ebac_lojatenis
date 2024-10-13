@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de noticias</title>
+    <title>Story Tenis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="redimin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Ebac News</h1>
+            <h1>Tenis Sister's</h1>
         </div>
         <div class="botao-menu">
             <button type="button">Abrir menu</button>
@@ -20,18 +24,21 @@
         <nav class="container">
             <ul class="menu">
                 <li>
-                    Sobre a loja
+                    <h3>Sobre a loja</h3>
                     <ul class="submenu">
                         <li>
-                            <a href="#">Quem somos</a>
+                            <a href="#sobre-loja">Quem somos</a>
+                        </li>
+                        <li>
+                            <a href="#contato">Fale conosco</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    Produtos
+                    <h3>Produtos</h3>
                     <ul class="submenu">
                         <li>
-                            <a href="#">Roupas</a>
+                            <a href="#produtos">Tênis</a>
                         </li>
                     </ul>
                 </li>
@@ -42,7 +49,7 @@
     </header>
     <div class="container conteudo">
          <main>
-            <section class="sobre-loja">
+            <section class="sobre-loja" id="sobre-loja">
                     <img src="./Img/ftInter.jpg" alt="">
                     <div class="content-sobre">
                     <h2>Sobre a empresa</h2>
@@ -51,11 +58,11 @@
                     </div>
             </section>
            </main>     
-        <section>
+        <section id="produtos">
             <h2>Produtos</h2>
             <hr class="linha">
-         <div class="noticias">
-            <article class="noticia">
+         <div class="produtos">
+            <article class="produto">
                 <a href="#"></a>
                 <img src="./Img/ftTenis1.jpg" alt="">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, suscipit quod veniam sunt vero odio optio consectetur laborum sapiente</p>
@@ -68,7 +75,7 @@
                    </div>
                    <button type="button" class="adicionar-carrinho">Adicionar ao carrinho</button>
             </article>
-            <article class="noticia">
+            <article class="produto">
                 <a href="#"></a>
                 <img src="./Img/ftTenis2.jpg" alt="">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, suscipit quod veniam sunt vero odio optio consectetur laborum sapiente</p>
@@ -81,7 +88,7 @@
                    </div>
                    <button type="button" class="adicionar-carrinho">Adicionar ao carrinho</button>
             </article>
-            <article class="noticia">
+            <article class="produto">
                 <a href="#"></a>
                 <img src="./Img/ftTenis3.jpg" alt="">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, suscipit quod veniam sunt vero odio optio consectetur laborum sapiente</p>
@@ -94,7 +101,7 @@
                    </div>
                    <button type="button" class="adicionar-carrinho">Adicionar ao carrinho</button>    
             </article>
-            <article class="noticia">
+            <article class="produto">
                 <a href="#"></a>
                 <img src="./Img/ftTenis4.jpg" alt="">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, suscipit quod veniam sunt vero odio optio consectetur laborum sapiente</p>
@@ -158,23 +165,20 @@
     </section>
     <footer>
         <div class="container container-flex">
-         <p>
-            2022   &copy; dreitos reservados
-         </p>
          <ul class="container-flex rodape">
             <li>
                 <a href="#">
-                    <img src="./icones/Facebook.png" alt="Facebok">
+                    <img src="./Img/facebook.png" alt="Facebok">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="./icones/Instagram.png" alt="Facebok">
+                    <img src="./Img/instagram (2).png" alt="instagram">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="./icones/Youtube.png" alt="Facebok">
+                    <img src="./Img/whatsapp (1).png" alt="whatsapp">
                 </a>
             </li>
          </ul>
@@ -187,6 +191,9 @@
                 allowfullscreen="" 
                 loading="lazy"></iframe>
         </div>
+        <p>
+            2022   &copy; dreitos reservados
+         </p>
         </div>
     </footer>
     <div class="floating-icon">
@@ -197,50 +204,6 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script>
-$(document).ready(function() {
-    $('.botao-menu button').click(function() {
-        $('.menu').slideToggle();
-    });
-    
-    $('.botao-cadastro button').click(function() {
-        $('.form-contato').slideToggle();
-    });
-    
-    // Deixando selecionado o tamanho 
-    document.querySelectorAll('.size-circle').forEach(function(element) {
-        element.addEventListener('click', function() {
-            this.classList.toggle('selected');
-        });
-    });
-    
-    // Captura todos os botões "Adicionar ao carrinho"
-    const buttons = document.querySelectorAll('.adicionar-carrinho');
-    const quantidadeElemento = document.getElementById('quantidade');
-    let quantidade = 0;
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const sizesSelected = button.closest('.noticia').querySelectorAll('.size-circle.selected');
-            if (sizesSelected.length === 0) {
-                alert('Por favor, selecione um tamanho antes de adicionar ao carrinho.');
-                return;
-            }
-            
-            quantidade++;
-            quantidadeElemento.textContent = quantidade;
-            $('.botoes-carrinho').slideDown(); 
-        });
-    });
-
-    // Adiciona evento de clique ao botão "limpar"
-    document.getElementById('limpar').addEventListener('click', () => {
-        quantidade = 0;
-        quantidadeElemento.textContent = quantidade; 
-        $('.botoes-carrinho').slideUp(); 
-    });
-});
-
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

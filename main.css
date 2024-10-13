@@ -2,17 +2,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Roboto, sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
-    color: inherit; /* Inherit mantém a cor do texto padrão */
-    text-decoration: none; /* Remove o sublinhado por padrão */
+    color: inherit;
+    text-decoration: none;
   }
   
   a:visited {
-    color: inherit; /* Mantém a cor original do link após ser clicado */
-    text-decoration: none; /* Remove o sublinhado também após ser clicado */
+    color: inherit;
+    text-decoration: none; 
   }
   
 body {
@@ -42,12 +42,34 @@ header {
     color: #fff;
 }
 
-.submenu {
-    display: none;
-    background-color: rgb(228, 228, 228);
-    position: absolute;
-    left: 0;
-    top: 100%;
+p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.container h1 {
+    margin-top: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.sobre-loja h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+.adicionar-carrinho button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+}
+
+section h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+}
+
+.menu h3{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
 }
 
 .menu > li {
@@ -56,6 +78,7 @@ header {
     padding: 16px;
     border-top: 4px solid transparent;
     position: relative;
+    width: 140px;
 }
 
 .clear {
@@ -75,32 +98,33 @@ header {
 }
 
 .submenu {
-    width: 110%;
-    max-width: 100%; 
+    background-color: rgb(228, 228, 228);
+    color: black;
+    top: 100%;
+    width: 100%; 
     overflow: hidden;
-    height: 90%;
-    max-height: 100%; 
     text-align: center;
+    display: none;
+    position: absolute;
   }
 
 .submenu li {
     display: block;
+    width: 100%; 
     padding-top: 12px;
     font-size: 14px;
     transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin-bottom: 8px;
 }
-
-.conteudo {
-    display: grid;
-}
-
-.noticia img {
+.produto img {
     width: 100%;
     padding: 8px;
     border-radius: 16px;
 }
 
-.noticia {
+.produto {
     background-color: #D9946C;
     padding: 8px;
     border-radius: 8px;
@@ -112,7 +136,7 @@ section h2 {
     margin-left: 2%;
 }
 
-.noticias {
+.produtos {
     display: grid;
     grid-template-columns: repeat(3,32.6%);
     column-gap: 1%;
@@ -159,6 +183,7 @@ footer > .container {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 16px;
+    color: #fff;
 }
 
 footer li {
@@ -202,8 +227,19 @@ footer li img {
     border-radius: 8px;
 }
 
+.floating-icon h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
 .rodape li {
     margin: 8px;
+}
+
+.rodape li img {
+      max-width: 100%;  
+      width: 50px;
+      height: 50px;
 }
 
 .botoes-carrinho {
@@ -246,7 +282,8 @@ footer li img {
 }
 
 .form-campo label {
-    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
     display: block;
 }
 
@@ -255,6 +292,7 @@ footer li img {
     width: 100%;
     display: block;
     padding: 8px;
+    border: none;
 }
 
 .form-campo textarea {
@@ -267,6 +305,11 @@ form {
 
 form button {
     max-width: 120px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border-radius: 16px;
+    padding: 8px;
+    border: none;
 }
 
 .botao-cadastro button {
@@ -274,12 +317,14 @@ form button {
     border-radius: 16px;
     animation: border-color-animation 3s infinite linear;
     cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
 }
 
 .price {
     display: flex;
     justify-content: space-between;
-    margin: 8px 0;
+    margin: 16px 0;
     align-items: center;
 }
 
@@ -291,7 +336,7 @@ form button {
     margin-left: 8px; 
 }
 
-.noticia button {
+.produto button {
     max-width: 100%;
     width: 100%;
     border-radius: 8px;
@@ -333,117 +378,14 @@ form button {
     color: white; 
 }
 
-.noticia:hover img {
+.produto:hover img {
     background-color: #733B1A;
 }
 
-.noticia button:hover {
+.produto button:hover {
     background-color: #733B1A; 
     pointer-events: auto;
     color: #fff;
     font-size: 16px;
     overflow: hidden;
-}
-
-
-@media screen and (max-width: 767px) {
-    .conteudo {
-        display: block;
-    }
-
-    .container {
-        max-width: 90%;
-    }
-
-    .destaque .noticia a {
-        display: block;
-        font-size: 1.5em;
-    }
-    
-    .destaque .noticia img {
-        margin-right: 0;
-    }
-
-    .noticias {
-        display: block;
-    }
-
-    .noticias .noticia {
-        margin-bottom: 32px;
-    }
-
-    header div.container {
-        flex-direction: column;
-    }
-
-    .submenu {
-        display: block;   
-        width: 100%;
-        position: relative;
-        border: none;
-    }
-    .menu{
-        display: none;
-    }
-    .menu > li {
-        clear: both;
-    }
-    
-    .submenu li {
-        display: block;
-        padding: 8px;
-    }
-
-    .botao-menu {
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        padding-bottom: 16px;
-    }
-
-    .botao-menu button {
-        padding: 8px;
-    }
-    
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px){
-    .container {
-        max-width: 90%;
-    }
-
-    .botao-menu {
-        display: none;
-    }
-
-    .destaque .noticia a {
-        font-size: 1.5em;
-    }
-
-    .noticias {
-        grid-template-columns: repeat(2,49%);
-    }
-    
-}
-
-@media screen and (min-width: 1024px){
-    .botao-menu {
-        display: none;
-    }
-}
-
-
-@keyframes border-color-animation {
-    0% {
-        border-color: yellow;
-    }
-    50% {
-        border-color: blue;
-    }
-    75% {
-        border-color: green;
-    }
-    100% {
-        border-color: yellow;
-    }
 }
