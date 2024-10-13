@@ -100,13 +100,14 @@ section h2 {
 .submenu {
     background-color: rgb(228, 228, 228);
     color: black;
-    top: 100%;
-    width: 100%; 
-    overflow: hidden;
+    top: 100%; /* Posiciona o submenu logo abaixo do item do menu */
+    width: 100%;
     text-align: center;
     display: none;
     position: absolute;
-  }
+    z-index: 10; /* Garante que o submenu fique acima de outros elementos */
+    left: 0;
+}
 
 .submenu li {
     display: block;
