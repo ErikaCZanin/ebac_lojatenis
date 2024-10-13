@@ -56,6 +56,7 @@
     display: block; 
     justify-content: space-between;
     padding: 0;
+    align-items: center;
     }
 
     .rodape {
@@ -105,6 +106,12 @@
         max-width: 100%;
     }
 
+    .contato img{
+        width: 250px;
+        height: 250px;
+        margin-bottom: 8px;
+    }
+
 }
 
 
@@ -121,13 +128,26 @@
     .produtos {
         grid-template-columns: repeat(2,49%);
     }
-    
-}
 
-.sobre-loja {
-    display: block;
-    align-items: center;
-    margin: 0 16px;
+    .sobre-loja {
+        display: block;
+        align-items: center;
+        margin: 0 16px;
+    }
+
+    .contato img{
+        width: 250px;
+        height: 250px;
+        margin-bottom: 8px;
+    }
+
+    .form-contato {
+        display: none;
+        background-color: #b69072;
+        width: 250px;
+        max-width: 100%;
+    }
+    
 }
 
 @media screen and (min-width: 1024px){
