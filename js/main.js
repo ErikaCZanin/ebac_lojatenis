@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('.botao-menu button').click(function() {
         $('.menu').slideToggle();
@@ -39,5 +38,56 @@ $(document).ready(function() {
         quantidade = 0;
         quantidadeElemento.textContent = quantidade; 
         $('.botoes-carrinho').slideUp(); 
+    });
+
+    $('#tel').mask('(00) 00000-0000', {
+        placeholder: '(00) 00000-0000'
+    });
+
+    $('form').validate({
+        rules: {
+            nome: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true 
+            },
+            tel: {
+                required: true
+            }
+        },
+        messages: {
+            nome: 'Por favor, insira o nome',
+            email: {
+                required: 'Por favor, insira um e-mail',
+                email: 'Por favor, insira um e-mail válido'
+            },
+            tel: 'Por favor, insira o telefone'
+        },
+        submitHandler: function(form) {
+            console.log(form);
+        },
+        invalidHandler: function(evento, validador) {
+            let camposIncorretos = validador.numberOfInvalids();
+            if(camposIncorretos) {
+                alert(`Existem ${camposIncorretos} campos não preenchidos`);
+            }
+        }
+    });
+
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+    
+    // Uso
+    $('#submit-button').click(function() {
+        const email = $('#email').val();
+        if (validateEmail(email)) {
+            alert('E-mail válido!');
+        } else {
+            alert('E-mail inválido!');
+        }
     });
 });
